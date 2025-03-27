@@ -297,3 +297,7 @@ dockerdata
 logs
 docs/build
 secret_key.py
+
+
+### Project
+dockerdata/

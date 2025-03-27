@@ -1,0 +1,18 @@
+services:
+  image-postgres:
+    image: postgres:16-alpine
+    container_name: pkmd-postgres
+    environment:
+      - POSTGRES_DB=$POSTGRES_DB
+      - POSTGRES_USER=$POSTGRES_USER
+      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - ./dockerdata/postgres/16/data:/var/lib/postgresql/data/pgdata
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      start_period: 60s
+      interval: 60s
