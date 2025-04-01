@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=255, verbose_name='Title')),
-                ('slides', models.JSONField(default=list, verbose_name='Slides')),
+                ('slides', models.JSONField(blank=True, default=list, verbose_name='Slides')),
                 ('last_changed_by', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='last_album_changes', to=settings.AUTH_USER_MODEL, verbose_name='Last changed by')),
             ],
         ),
@@ -62,7 +62,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='folder',
             name='parent',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='folder_to_parent', to='artworks.folder'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='folder_to_parent', to='artworks.folder'),
         ),
         migrations.AddField(
             model_name='album',
