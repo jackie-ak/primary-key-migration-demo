@@ -1,0 +1,104 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$Thisisnotarealhashwhowouldhavethought!Usemanagementcommandtosetnewone.",
+        "last_login": "2025-03-27T14:03:57.333Z",
+        "is_superuser": true,
+        "username": "jackie",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-03-27T14:03:48.264Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "artworks.album",
+    "pk": 5,
+    "fields": {
+        "title": "Valis exports",
+        "slides": [],
+        "user": 1,
+        "last_changed_by": 1
+    }
+},
+{
+    "model": "artworks.album",
+    "pk": 6,
+    "fields": {
+        "title": "Public domain artworks",
+        "slides": [],
+        "user": 1,
+        "last_changed_by": 1
+    }
+},
+{
+    "model": "artworks.album",
+    "pk": 7,
+    "fields": {
+        "title": "Current course materials",
+        "slides": [],
+        "user": 1,
+        "last_changed_by": 1
+    }
+},
+{
+    "model": "artworks.permissionsrelation",
+    "pk": 3,
+    "fields": {
+        "album": 5,
+        "user": 1,
+        "permissions": "EDIT"
+    }
+},
+{
+    "model": "artworks.permissionsrelation",
+    "pk": 4,
+    "fields": {
+        "album": 6,
+        "user": 1,
+        "permissions": "VIEW"
+    }
+},
+{
+    "model": "artworks.folder",
+    "pk": "PMz7MtmHqRVqXabBXKmSgU",
+    "fields": {
+        "title": "jackie's root folder",
+        "owner": 1,
+        "parent": null
+    }
+},
+{
+    "model": "artworks.folderalbumrelation",
+    "pk": 2,
+    "fields": {
+        "album": 5,
+        "user": 1,
+        "folder": "PMz7MtmHqRVqXabBXKmSgU"
+    }
+},
+{
+    "model": "artworks.folderalbumrelation",
+    "pk": 3,
+    "fields": {
+        "album": 6,
+        "user": 1,
+        "folder": "PMz7MtmHqRVqXabBXKmSgU"
+    }
+},
+{
+    "model": "artworks.folderalbumrelation",
+    "pk": 4,
+    "fields": {
+        "album": 7,
+        "user": 1,
+        "folder": "PMz7MtmHqRVqXabBXKmSgU"
+    }
+}
+]
