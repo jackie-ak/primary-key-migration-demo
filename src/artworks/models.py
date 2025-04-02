@@ -9,6 +9,9 @@ from django.utils.translation import gettext_lazy as _
 class Album(models.Model):
     """Specific users can create their own collections of artworks."""
 
+    id = ShortUUIDField(primary_key=True)
+    archive_id = models.BigIntegerField(null=True)
+
     title = models.CharField(verbose_name=_('Title'), max_length=255)
     slides = JSONField(verbose_name=_('Slides'), default=list, blank=True)
     user = models.ForeignKey(
