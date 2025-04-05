@@ -6,7 +6,7 @@
         "password": "pbkdf2_sha256$600000$Thisisnotarealhashwhowouldhavethought!Usemanagementcommandtosetnewone.",
         "last_login": "2025-03-27T14:03:57.333Z",
         "is_superuser": true,
-        "username": "jackie",
+        "username": "demo",
         "first_name": "",
         "last_name": "",
         "email": "",
