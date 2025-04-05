@@ -1,0 +1,6 @@
+POSTGRES_DB=django_pkmd
+POSTGRES_USER=django_pkmd
+POSTGRES_PASSWORD=set_this_to_something_strong_like_M3kp4KzPAQ75QvDZrEHN7URmz8uY4a5g_but_not_actually_this_ok?!
+
+# Set this to true, if you want to see the Django welcome screen and other debug output
+# DEBUG=False
