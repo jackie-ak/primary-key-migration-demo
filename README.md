@@ -41,3 +41,57 @@ python manage.py runserver
 Now you can visit the demo app on http://127.0.0.1:8000/
 
 The admin interface is at http://127.0.0.1:8000/admin/
+
+## Stopping & cleaning up
+
+While the Django dev server (the thing started with the last `runserver`) command
+is running, you can hit Ctrl + C to quit. In order to clean up the container, go
+up to the root directory again and use docker compose to stop and remove the
+containers:
+
+```bash
+cd ..
+docker compose down
+```
+
+Next time to start up everything you can just do:
+
+```bash
+docker compose up -d
+cd src
+python manage.py runserver
+```
+
+If you want to start with a fresh database, you need to remove the `postgres`
+folder inside the `dockerdata` folder (when the container is currently not
+running). And then you need the whole startup sequence from the section before,
+including the `migrate`, `loaddata`, and `changepassword` commands.
+
+## How to set up a virtual environment
+
+If you are already using a plain Python installation, the quickest way to set
+up a new virtual environment is with:
+
+```bash
+python -m virtualenv .venv
+```
+
+Then you can start the virtual environment with:
+
+```bash
+# On Linux and MacOS
+source .venv/bin/activate
+
+# On Windows
+.venv\Scripts\activate.bat
+```
+
+If you want to get out of your virtual environment without just closing your
+terminal window, you can use the `deactivate` command.
+
+Generally I can recommend using [uv](https://docs.astral.sh/uv/) for
+handling python versions as well as virtual environments. Once it is
+set up properly (which is not very complicated), it provides convenient
+and fast ways to install different python versions and set up virtual
+environments. And the `uv pip` commands are just soooo much faster
+than the classical `pip` commands.
